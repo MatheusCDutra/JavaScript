@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: verdana;
+}
+
+body {
+  background-color: black;
+}
+
+h1.title {
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+form {
+  margin: 10px;
+  padding: 10px;
+  border: 1px, solid #333;
+  border-radius: 20px;
+  display: flex; /*variar o tamanho da tela*/
+}
+
+form input {
+  padding: 5px;
+  border: none;
+  outline: none; /*sem borda ao cliclar*/
+  flex: 1;/*o form input ocupa 100% da extensão da linha preservando o espaço ocupado pelo button 'Pesquisar'*/
+  color: white;
+  background-color: black;
+}
+
+form button {
+  padding: 5px 10px;
+  background-color: darkred;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+form button:hover {  /*configuração do botão flutuante*/
+    background-color: rgb(72, 0, 0);
+}
+
+div.lista {
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;/*quando a tela reduz, empurra os itens para baixo*/
+  align-items: center;
+  justify-content: center;
+}
+
+/*todos os itens criados pertencerá a ele*/
+div.item {
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 5px;
+  color: white
+}
+
+div.item:hover {
+  background-color: darkred;
+  cursor: pointer;
+  color: yellowgreen;
+}
+
+div.item img {
+  width: 100%;
+}
