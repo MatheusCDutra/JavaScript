@@ -1,0 +1,125 @@
+/* criando variáveis, para facilitar ajustes */
+:root {
+  --primary: #E50914;
+  --grey: #141414;
+}
+
+html, body {
+  margin: 0; /*margen de fora*/
+  box-sizing: border-box; /*a borda é incluida no tamanho da caixa*/
+  color: white; /*cor da fonte*/
+}
+
+ul {
+  list-style: none; /*sem marcadores de lista*/
+  padding: 0; /*preenchimento interno*/
+  margin: 0; /*margem externa*/
+  gap: 15px; /*definir o espaçamento entre os elementos de um contêiner flexível ou de uma grade*/
+}
+
+a {
+  text-decoration: none;/*decoração de texto*/
+}
+
+body {
+  font-family: 'Poppins', sams-serf;
+  background-color: var(--grey);/*para chamar uma variável digita-se: var(--nomeDaVariavel)*/
+}
+
+.container {
+  max-width: 1200px;/*largura máxima*/
+  margin: 0 auto; /*margem superior e inferior = 0, marqem esquerda e dereita centralizadas horizontalmente*/
+  padding: 0 1rem; /*preenchimento interno superior e inferior = 0, esq e dir 1rem (medida[tamanho] da fonte do elemento raiz)*/
+}
+
+.main-header {
+  background-color: blue;/*temporário p/ delimitar onde estamos estilizando*/
+  top: 0;/*posicionado no topo do seu elemento pai*/
+  position: fixed; /*fixa o obj no topo do seu elemento pai*/
+  height: 70px; /*define a altura do obj*/
+  width: 100%;/*defie a largura em 100%*/
+  overflow: hidden; /*trasnbordamento: ocultar; o que exceder o espaço disponível para um elemento será cortado*/
+}
+
+.main-header .container {
+  display: flex; /*linhas ou colunas flexiveis, por padrão flex-direction: row, elementos em linha*/
+  flex-direction: row; /*deinir a direção dos elementos em linha, não seria necessário pois o padráo já é em linha, poderia ser column*/
+  justify-content: flex-start; /*definir o alinhamento dos elementos flexíveis a depender da flex-direction, no caso, no eixo X à esquerda*/
+  align-items: center; /*alinhar no eixo Y*/
+  gap: 40px; /*definir o espaçamento entre os elementos de um contêiner flexível ou de uma grade*/
+  height: inherit;/*herança, herda a propriedade do elemento pai, no caso height, altura*/
+}
+
+.main-header img {
+  width: auto; /* ajusta a largura automaticamente no espaço disponível, preservando a proporção original*/
+  height: 100px;/*ajusta a altura em 100px*/
+}
+/*elementos da barra de navegação*/
+.navbar {
+  width: 100%;
+  display: flex;/*linhas flexíveis, por padrão no eixo X*/
+  justify-content: space-between; /*alinhamentos dos elementos flexiveis: mesmo espaçamentos entre todos*/
+}
+/*elementos da unordered list*/
+.navbar ul {
+  display: flex; /*linhas flexiveis no eixo X, padrão*/
+  align-items: center; /*alinhamento no eixo Y*/
+}
+
+.navbar ul li a {
+  color: white;
+  font-size: 16px;
+  transition: 0.3s tempo de transição
+}
+
+.navbar ul li a:hover {
+  opacity: 0.8;
+}
+
+.navbar .actions {
+  display: flex; /*linhas felxiveis no eixo X*/
+  align-items: center; /*alinhamento vertical*/
+  gap: 6px; /*distância entre os elementos na div*/
+}
+
+.navbar .actions i {
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.actions .search-field {
+  display: flex; /*dispor os elementos no eixo X*/
+  align-items: center; /*alinhar verticalmente*/
+  position: relative; /*pode ser deslocado em relação à posição original*/
+}
+
+.actions .search-field i {
+  position: absolute;/*posiciona o elemento em relação ao elemento pai(.search-field), não mais em relação ao fluxo normal*/
+  left: 6px;
+  top: 6px;
+  padding: 2px;
+}
+
+.actions .search-field input {
+  height: 34px;
+  padding-left: 34px;/*internamente à esquerda*/
+  background: none;
+  color: white;
+  border: solid transparent 1px;/*propriedades da borda: sólida, trasnparente(não visível) com 1px de largura*/
+  border-radius: 10px; /*suavizar a borda*/
+  outline: none;/*aparência de contorno. Quando o elemento for clicado não haverá qualquer destaque de contorno*/
+  width: 0px;/*zerar a largura faz o elemento input ficar oculto*/
+  transition: 0.3s ease;/*define uma transição suave quando houver uma mudança de valor. tempo de transição: 0.3s. ease define a função de temporização(timing function) de transição(padrão), gradual e suave*/
+}
+/* :focus {} quando o usuário clicar(ou navegar) no campo de entrada, no caso o ícone search, desencadeará as seguintes mudanças de estilo:*/
+.actions .search-field input:focus {
+  width: 300px;
+  background: rgb(161, 159, 159);
+  border: solid rgb(7, 7, 7) 1px;
+}
+
+/*para mudar a cor do placeholder do elemento input, usa-se a pseudo-class CSS ::placeholder*/
+.actions .search-field input::placeholder {
+  color:#494848;
+}
